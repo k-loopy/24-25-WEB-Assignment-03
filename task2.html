@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <style>
+        *{
+            margin: auto;
+            background-color: #585858;
+        }
+        .logo{
+            width: 400px;
+            margin: 0px;
+        }
+        form{
+            margin-top: 100px;
+            border: 1px solid white;
+            width: 400px;
+            height: 500px;
+            color: white;
+        }
+        b{
+            color: #03c75a;
+        }
+        input{
+            margin-top: auto;
+        }
+        label{
+            font-weight: bold;
+        }
+        p{
+            font-size: small;
+            border: 1px solid white;
+            width: 350px;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button{
+            display: block;
+            text-align: center;
+            margin-top: 35px;
+            border: 1px solid #03c75a;
+            background-color: #03c75a;
+            width: 340px;
+            height: 40px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #b6b4b4;
+            border: 1px solid #b6b4b4;
+            cursor: not-allowed;
+        }
+        #checkbox1, #checkbox2 {
+            margin-top: 0px;
+            margin-left: 10px;
+        }
+        .second{
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const checkbox1 = document.getElementById("checkbox1");
+            const checkbox2 = document.getElementById("checkbox2");
+            const loginButton = document.querySelector("button[type='submit']");
+
+            loginButton.disabled = true;
+
+            function updateButtonState() {
+                loginButton.disabled = !(checkbox1.checked && checkbox2.checked);
+            }
+
+            checkbox1.addEventListener("change", updateButtonState);
+            checkbox2.addEventListener("change", updateButtonState);
+
+            loginButton.addEventListener("click", function(event) {
+                if (!loginButton.disabled) {
+                    event.preventDefault();
+                    window.location.href = "success.html";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <form>
+            <img src="img/logo.jpeg" class="logo">
+            <header>
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1"><b>[필수]</b> 가입약관</label>
+                <p>GDG서비스를 이용하시거나 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.</p>
+            </header>
+            <header class="second">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2"><b>[필수]</b> 가입약관</label>
+                <p>실명 인증된 아이디로 가입, 위치기반서비스 이용약관, 이벤트·혜택 정보 수신 동의를 포함합니다.</p>
+            </header>
+            <header>
+                <button type="submit" disabled>로그인</button>
+            </header>
+        </form>
+    </div>
+</body>
+</html>

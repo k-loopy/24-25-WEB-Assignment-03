@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>task1</title>
+    <style>
+        * {
+            margin: auto;
+            background-color: #585858;
+        }
+        .logo {
+            width: 400px;
+        }
+        form {
+            margin-top: 120px;
+            border: 1px solid white;
+            width: 400px;
+            height: 500px;
+        }
+        .input-field {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            border: 1px solid #b6b4b4;
+            width: 300px;
+            height: 40px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        .input-field input {
+            border: none;
+            outline: none;
+            width: 100%;
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: white;
+        }
+        .submit {
+            text-align: center;
+            margin-top: 60px;
+            background-color: white;
+        }
+        .name{
+            background-color: white;
+        }
+        .button {
+            border: 1px solid #03c75a;
+            background-color: #03c75a;
+            width: 300px;
+            height: 40px;
+            border-radius: 7px;
+            color: white;
+        }
+        span{
+            background-color: white;
+        }
+        div > form{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <img src="img/logo.jpeg" class="logo">
+            <hr>
+            <div class="name">
+                <div class="input-field">
+                    <span class="material-symbols-outlined">person</span>
+                    <input type="text" name="u_id" placeholder="아이디">
+                </div>
+                <div class="input-field">
+                    <span class="material-symbols-outlined">lock</span>
+                    <input type="password" name="u_pw" placeholder="비밀번호">
+                </div>
+            </div>
+            <div class="submit">
+                <input type="submit" class="button" value="로그인">
+            </div>
+        </form>
+    </div>
+    <script>
+        document.querySelector('.button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const userId = document.querySelector('input[name="u_id"]');
+            const userPw = document.querySelector('input[name="u_pw"]');
+
+            if (!userId.value.trim()) {
+                alert("아이디를 입력해주세요.");
+                return;
+            }
+            if (!userPw.value.trim()) {
+                alert("비밀번호를 입력해 주세요.");
+                return;
+            }
+
+            window.location.href = "success.html";
+        });
+    </script>
+</body>
+</html>
