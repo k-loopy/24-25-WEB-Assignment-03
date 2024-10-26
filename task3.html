@@ -5,165 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>task3</title>
-    <style>
-        * {
-            margin: auto;
-            background-color: #585858;
-        }
-        .logo {
-            width: 400px;
-            margin: 0px;
-        }
-        form {
-            margin-top: 50px;
-            border: 1px solid #585858;
-            width: 400px;
-            height: 600px;
-            background-color: white;
-        }
-        hr {
-            color: #b6b4b4;
-            margin: 0px;
-        }
-        .btn_open {
-            display: block;
-            text-align: right;
-            color: white;
-            text-decoration: none;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-right: 10px;
-            font-size: small;
-        }
-        .input-container {
-            display: flex;
-            align-items: center;
-            border: 1px solid gray;
-            height: 20px;
-            width: 330px;
-            margin: 10px auto;
-            padding: 5px;
-            background-color: white;
-        }
-        .input-container span {
-            margin-right: 8px;
-            color: gray;
-        }
-        .input-container input {
-            width: 100%;
-            border: none;
-            outline: none;
-        }
-        .sign_in {
-            margin-top: 20px;
-            margin-left: 40px;
-            border: 1px solid #03c75a;
-            width: 180px;
-            height: 40px;
-            background-color: #03c75a;
-            border-radius: 5px;
-            color: white;
-        }
-        .btn_close {
-            margin-left: 30px;
-            border: 1px solid #f51d1d;
-            width: 100px;
-            height: 40px;
-            background-color: #f51d1d;
-            border-radius: 5px;
-            color: white;
-        }
-        .error-messages {
-            color: #f51d1d;
-            font-size: small;
-            width: 330px;
-            max-height: 80px;
-            overflow-y: auto;
-            margin: 10px auto;
-            text-align: left;
-        }
-        span{
-            background-color: white;
-        }
-        input{
-            background-color: white;
-        }
-        .form_f{
-            background-color: white;
-        }
-        p{
-            background-color: white;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const btnOpen = document.querySelector(".btn_open");
-            const btnClose = document.querySelector(".btn_close");
-            const formPopup = document.querySelector(".pop_wrap");
-            const signInButton = document.querySelector(".sign_in");
-            const errorMessagesDiv = document.createElement("div");
-
-            errorMessagesDiv.classList.add("error-messages");
-            const form = document.querySelector("form");
-            form.insertBefore(errorMessagesDiv, document.querySelector(".sign_in"));
-
-            btnOpen.addEventListener("click", function (event) {
-                event.preventDefault();
-                formPopup.style.display = "block";
-            });
-
-            btnClose.addEventListener("click", function () {
-                formPopup.style.display = "none";
-            });
-
-            function validateForm() {
-                errorMessagesDiv.innerHTML = "";
-                const errors = [];
-                const userId = document.querySelector("input[name='user_id']");
-                const userPw = document.querySelector("input[name='user_pw']");
-                const userEmail = document.querySelector("input[name='user_email']");
-                const userDob = document.querySelector("input[name='user_dob']");
-                const userPhone = document.querySelector("input[name='user_phone']");
-
-                if (userId.value.trim().length < 3) {
-                    errors.push("아이디는 3글자 이상입니다.");
-                }
-                if (userPw.value.trim().length < 6) {
-                    errors.push("비밀번호는 6글자 이상입니다.");
-                }
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(userEmail.value.trim())) {
-                    errors.push("이메일 형식을 지켜야합니다.");
-                }
-                const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-                if (!dateRegex.test(userDob.value.trim())) {
-                    errors.push("생년월일은 YYYY-MM-DD와 같은 형식입니다.");
-                }
-                const phoneRegex = /^\d{11}$/;
-                if (!phoneRegex.test(userPhone.value.trim())) {
-                    errors.push("전화번호는 - 없이 11자리 숫자입니다.");
-                }
-                if (!userId.value.trim() || !userPw.value.trim() || !userEmail.value.trim() || !userDob.value.trim() || !userPhone.value.trim()) {
-                    errors.push("위 입력항목 모두 공백일 수 없습니다.");
-                }
-
-                errors.forEach(error => {
-                    const errorP = document.createElement("p");
-                    errorP.textContent = error;
-                    errorMessagesDiv.appendChild(errorP);
-                });
-
-                return errors.length === 0;
-            }
-
-            signInButton.addEventListener("click", function (event) {
-                event.preventDefault();
-                if (validateForm()) {
-                    window.location.href = "success.html";
-                }
-            });
-        });
-    </script>
+    <link href="task3.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrap">
@@ -193,16 +35,17 @@
                 </div>
                 <div class="input-container">
                     <span class="material-symbols-outlined">badge</span>
-                    <input type="date" name="user_dob" placeholder="생년월일">
+                    <input type="text" name="user_dob" placeholder="생년월일">
                 </div>
                 <div class="input-container">
                     <span class="material-symbols-outlined">call</span>
-                    <input type="number" name="user_phone" placeholder="전화번호">
+                    <input type="tel" name="user_phone" placeholder="전화번호" >
                 </div>
             </div>
             <input type="submit" value="회원가입" class="sign_in">
             <input type="button" value="닫기" class="btn_close">
         </form>
     </div>
+    <script type="text/javascript" src="task3.js"></script>
 </body>
 </html>

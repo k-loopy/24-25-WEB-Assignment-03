@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+* {
+    margin: auto;
+    background-color: #585858;
+}
+.logo {
+    width: 400px;
+    margin: 0px;
+}
+form {
+    margin-top: 50px;
+    border: 1px solid #585858;
+    width: 400px;
+    height: 600px;
+    background-color: white;
+}
+hr {
+    color: #b6b4b4;
+    margin: 0px;
+}
+.btn_open {
+    display: block;
+    text-align: right;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    font-size: small;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    height: 20px;
+    width: 330px;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: white;
+}
+.input-container span {
+    margin-right: 8px;
+    color: gray;
+}
+.input-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.sign_in {
+    margin-top: 20px;
+    margin-left: 40px;
+    border: 1px solid #03c75a;
+    width: 180px;
+    height: 40px;
+    background-color: #03c75a;
+    border-radius: 5px;
+    color: white;
+}
+.btn_close {
+    margin-left: 30px;
+    border: 1px solid #f51d1d;
+    width: 100px;
+    height: 40px;
+    background-color: #f51d1d;
+    border-radius: 5px;
+    color: white;
+}
+.error-messages {
+    color: #f51d1d;
+    font-size: small;
+    width: 330px;
+    max-height: 80px;
+    overflow-y: auto;
+    margin: 10px auto;
+    text-align: left;
+}
+span{
+    background-color: white;
+}
+input{
+    background-color: white;
+}
+.form_f{
+    background-color: white;
+}
+p{
+    background-color: white;
+}

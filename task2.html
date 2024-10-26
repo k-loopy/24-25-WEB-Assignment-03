@@ -4,87 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>task2</title>
-    <style>
-        *{
-            margin: auto;
-            background-color: #585858;
-        }
-        .logo{
-            width: 400px;
-            margin: 0px;
-        }
-        form{
-            margin-top: 100px;
-            border: 1px solid white;
-            width: 400px;
-            height: 500px;
-            color: white;
-        }
-        b{
-            color: #03c75a;
-        }
-        input{
-            margin-top: auto;
-        }
-        label{
-            font-weight: bold;
-        }
-        p{
-            font-size: small;
-            border: 1px solid white;
-            width: 350px;
-            border-radius: 10px;
-            padding: 10px;
-            margin-top: 5px;
-        }
-        button{
-            display: block;
-            text-align: center;
-            margin-top: 35px;
-            border: 1px solid #03c75a;
-            background-color: #03c75a;
-            width: 340px;
-            height: 40px;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-        }
-        button:disabled {
-            background-color: #b6b4b4;
-            border: 1px solid #b6b4b4;
-            cursor: not-allowed;
-        }
-        #checkbox1, #checkbox2 {
-            margin-top: 0px;
-            margin-left: 10px;
-        }
-        .second{
-            margin-top: 10px;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const checkbox1 = document.getElementById("checkbox1");
-            const checkbox2 = document.getElementById("checkbox2");
-            const loginButton = document.querySelector("button[type='submit']");
-
-            loginButton.disabled = true;
-
-            function updateButtonState() {
-                loginButton.disabled = !(checkbox1.checked && checkbox2.checked);
-            }
-
-            checkbox1.addEventListener("change", updateButtonState);
-            checkbox2.addEventListener("change", updateButtonState);
-
-            loginButton.addEventListener("click", function(event) {
-                if (!loginButton.disabled) {
-                    event.preventDefault();
-                    window.location.href = "success.html";
-                }
-            });
-        });
-    </script>
+    <link href="task2.css" rel="stylesheet">
 </head>
 <body>
     <div>
@@ -105,5 +25,6 @@
             </header>
         </form>
     </div>
+    <script type="text/javascript" src="task2.js"></script>
 </body>
 </html>
